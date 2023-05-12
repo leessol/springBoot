@@ -1,0 +1,8 @@
+package com.shinhan.education.repository;
+
+
+public interface MemberRepository extends CrudRepository<MemberDTO, Long> {
+
+	
+
+}

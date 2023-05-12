@@ -1,0 +1,16 @@
+package com.shinhan.education.vo;
+
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Setter
+@Getter
+@ToString
+public class JOBVO {
+	private String jobId;
+	private String jobTitle;
+	private int minSalary;
+	private int maxSalar;
+	
+}

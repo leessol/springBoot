@@ -1,0 +1,20 @@
+package com.shinhan.education;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.ComponentScans;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+
+@ComponentScan(basePackages = {"com.shinhan"})
+@SpringBootApplication
+@EntityScan("com.shinhan") //테이블로 바꾸고 싶은 애들 VO를 스캔하는것
+@EnableJpaRepositories("com.shinhan") //저 패키지에 있는 repository 를 쓰고 싶다. 
+public class SpringBootProjectApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SpringBootProjectApplication.class, args);
+	}
+
+}

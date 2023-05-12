@@ -1,0 +1,20 @@
+package com.shinhan.education;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.TestComponent;
+
+import com.shinhan.education.repository.MemberRepository;
+
+import lombok.extern.java.Log;
+
+@TestComponent
+@Log
+public class MemberTest {
+	
+	MemberRepository mRepo;
+	
+	@Test
+	void memberInsert() {
+		//member table에 10명 입력하기
+	}
+}

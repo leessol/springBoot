@@ -1,0 +1,19 @@
+package com.shinhan.education.repository;
+
+import java.util.List;
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.shinhan.education.vo.BoardVO;
+import com.shinhan.education.vo.JobVO;
+
+public interface JobsRepository extends CrudRepository<JobVO, String> {
+// 오른쪽은 key 값이다. ==> job_id는 string이라서 
+	
+	//조건 조회 추가하기 
+		public List<BoardVO>findByTitle(String title); //string으로 title이 들어옴 //()안에 내용들이 where절에 들어감
+		public List<BoardVO> findByContent(String aa);
+		public List<BoardVO> findByWriter(String writer);
+		public List<BoardVO> findByWriterAndTitle(String writer, String title);
+
+}

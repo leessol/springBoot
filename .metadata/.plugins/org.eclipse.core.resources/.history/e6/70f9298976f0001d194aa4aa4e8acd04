@@ -1,0 +1,55 @@
+package com.shinhan.education;
+
+import static com.querydsl.core.types.PathMetadataFactory.*;
+
+import com.querydsl.core.types.dsl.*;
+
+import com.querydsl.core.types.PathMetadata;
+import javax.annotation.Generated;
+import com.querydsl.core.types.Path;
+import com.querydsl.core.types.dsl.PathInits;
+
+
+/**
+ * QProfileDTO is a Querydsl query type for ProfileDTO
+ */
+@Generated("com.querydsl.codegen.EntitySerializer")
+public class QProfileDTO extends EntityPathBase<ProfileDTO> {
+
+    private static final long serialVersionUID = 1247005916L;
+
+    private static final PathInits INITS = PathInits.DIRECT2;
+
+    public static final QProfileDTO profileDTO = new QProfileDTO("profileDTO");
+
+    public final BooleanPath currentYn = createBoolean("currentYn");
+
+    public final StringPath fname = createString("fname");
+
+    public final com.shinhan.education.vo.QMemberDTO member;
+
+    public final NumberPath<Long> pno = createNumber("pno", Long.class);
+
+    public QProfileDTO(String variable) {
+        this(ProfileDTO.class, forVariable(variable), INITS);
+    }
+
+    public QProfileDTO(Path<? extends ProfileDTO> path) {
+        this(path.getType(), path.getMetadata(), PathInits.getFor(path.getMetadata(), INITS));
+    }
+
+    public QProfileDTO(PathMetadata metadata) {
+        this(metadata, PathInits.getFor(metadata, INITS));
+    }
+
+    public QProfileDTO(PathMetadata metadata, PathInits inits) {
+        this(ProfileDTO.class, metadata, inits);
+    }
+
+    public QProfileDTO(Class<? extends ProfileDTO> type, PathMetadata metadata, PathInits inits) {
+        super(type, metadata, inits);
+        this.member = inits.isInitialized("member") ? new com.shinhan.education.vo.QMemberDTO(forProperty("member")) : null;
+    }
+
+}
+

@@ -1,0 +1,66 @@
+package com.shinhan.education;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.IntStream;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.shinhan.education.repository.PDSBoardRepository;
+import com.shinhan.education.repository.PDSFileRepository;
+import com.shinhan.education.vo.PDSBoard;
+import com.shinhan.education.vo.PDSFile;
+
+import lombok.extern.java.Log;
+
+@SpringBootTest
+@Log
+public class ManyToOneTest {
+	@Autowired
+	PDSFileRepository fileRepo;
+	
+	@Autowired
+	PDSBoardRepository boardRepo;
+	
+	@Test
+	void selectAllBoard() {
+		boardRepo.findAll().forEach(board->{
+			log.info(board.to)
+		});
+	}
+	
+	//@Test
+	void insertAll() {
+		
+//		PDSBoard board = PDSBoard.builder()
+//						.pname("SpringBoot수업")
+//						.pwriter("은정")
+//						.files2(flist)
+//						.build();
+//		boardRepo.save(board);
+		
+		IntStream.range(41,50).forEach(i->{
+			
+			List<PDSFile> flist = new ArrayList<>();
+			
+			IntStream.range(1,6).forEach(j->{
+				PDSFile f =  PDSFile.builder()
+						.pdsfilename("shinFile-"+j+".xls")
+						.build();
+				flist.add(f);
+			});
+			
+			PDSBoard board =  PDSBoard.builder()
+					.pname("Spring 수업-----" + i)
+					.pwriter("은빈")
+					.files2(flist)
+					.build();
+			boardRepo.save(board);
+		});
+
+	}
+	
+	
+}

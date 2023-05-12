@@ -1,0 +1,26 @@
+package com.shinhan.education;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.shinhan.education.repository.PDSBoardRepository;
+import com.shinhan.education.repository.PDSFileRepository;
+import com.shinhan.education.vo.PDSBoard;
+
+@SpringBootTest
+public class ManyToOneTest {
+	@Autowired
+	PDSFileRepository fileRepo;
+	
+	@Autowired
+	PDSBoardRepository boardRepo;
+	
+	@Test
+	void insertAll() {
+		PDSBoard board = PDSBoard.builder()
+						.pname("")
+						.pwriter("")
+						.build();
+	}
+}

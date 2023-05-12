@@ -1,0 +1,42 @@
+package com.shinhan.education;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.IntStream;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.shinhan.education.repository.PDSBoardRepository;
+import com.shinhan.education.repository.PDSFileRepository;
+import com.shinhan.education.vo.PDSBoard;
+import com.shinhan.education.vo.PDSFile;
+
+@SpringBootTest
+public class ManyToOneTest {
+	@Autowired
+	PDSFileRepository fileRepo;
+	
+	@Autowired
+	PDSBoardRepository boardRepo;
+	
+	@Test
+	void insertAll() {
+		List<PDSFile> flist = new ArrayList<>();
+		IntStream.range(1,6).forEach(i->{
+			PDSFile f = PDSFile.builder()
+					.pdsfilename("shinFile-"+i);
+					.build();
+			flist.add(f);
+		});
+		PDSFile files = PDSFile.builder()
+						.
+		
+		PDSBoard board = PDSBoard.builder()
+						.pname("")
+						.pwriter("")
+						.files2(files2)
+						.build();
+	}
+}

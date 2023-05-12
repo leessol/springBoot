@@ -1,0 +1,58 @@
+package com.shinhan.education;
+
+import java.util.stream.IntStream;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.shinhan.education.repository.MemberRepository;
+import com.shinhan.education.repository.ProfileRepository;
+import com.shinhan.education.vo.MemberDTO;
+import com.shinhan.education.vo.ProfileDTO;
+
+import lombok.extern.java.Log;
+
+@SpringBootTest
+@Log
+public class MemberProfileTest {
+	@Autowired
+	MemberRepository mRepo;
+	@Autowired
+	ProfileRepository pRepo;
+	
+	@Test
+	void profileInsertTest() {
+		MemberDTO member = mRepo.findById("user1").orElse(null);
+//		if(member != null) {
+//			log.info(member.toString());
+//			IntStream.range(1,6).forEach(i->{
+//				ProfileDTO profile = ProfileDTO.builder()
+//						.fname("face-" + i + ".jpg")
+//						.currentYn(i==5?true:false)
+//						.member(member)
+//						.build();
+//				pRepo.save(profile);
+//			});
+//			pRepo.findAll().forEach(profile->log.info(profile.toString()));
+//			
+//		}
+//		
+		MemberDTO member2 = mRepo.findById("user2").orElse(null);
+		if(member2 != null) {
+			log.info(member2.toString());
+			IntStream.range(1,6).forEach(i->{
+				ProfileDTO profile = ProfileDTO.builder()
+						.fname("face-" + i + ".jpg")
+						.currentYn(i==5?true:false)
+						.member(member)
+						.build();
+				pRepo.save(profile);
+			});
+			pRepo.findAll().forEach(profile->log.info(profile.toString()));
+			
+		}
+		
+	}
+	
+}

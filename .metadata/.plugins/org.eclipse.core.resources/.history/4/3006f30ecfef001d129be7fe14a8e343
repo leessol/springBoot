@@ -1,0 +1,27 @@
+package com.shinhan.education.repository;
+
+import java.util.List;
+
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+import com.shinhan.education.vo.BoardVO;
+
+//interface 를 설계한다. ... crud 작업을 위해  : 구현은 JPA가 함. 우리는 설계만 한다. 
+@Repository
+public interface BoardRepository extends CrudRepository<BoardVO, Long> {
+	//조건 조회 추가하기 
+			public List<BoardVO>findByTitle(String title); //string으로 title이 들어옴 //()안에 내용들이 where절에 들어감
+			public List<BoardVO> findByContent(String aa);
+			public List<BoardVO> findByWriter(String writer);
+			public List<BoardVO> findByWriterAndTitle(String writer, String title);
+
+			public List<BoardVO> findByTitleContaining(String title); //title like '%?%'
+			public List<BoardVO> findByTitleStartingWith(String title); //title like '?%'
+			public List<BoardVO> findByTitleEndingWith(String title); //title like '%?'
+			
+			//title like '%?%' and boardNo > ?
+			public List<BoardVO> findByContentNull(); //isnull 또는 null
+			public List<BoardVO> findByContentIgnoreCase(String content);
+			
+}

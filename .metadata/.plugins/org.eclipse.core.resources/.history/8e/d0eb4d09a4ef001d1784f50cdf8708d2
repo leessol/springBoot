@@ -1,0 +1,13 @@
+package com.shinhan.vo;
+
+import java.sql.Timestamp;
+
+public class BoardVO {
+	private Long boardNo;
+	private String title;
+	private String content;
+	private String writer;
+	private Timestamp reg;
+	private Timestamp updateDate;
+	
+}

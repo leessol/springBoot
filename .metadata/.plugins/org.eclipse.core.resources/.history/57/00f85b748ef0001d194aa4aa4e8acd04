@@ -1,0 +1,36 @@
+package com.shinhan.education.vo;
+
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@ToString
+@Entity
+@Table(name = "tbl_pdsboard")
+@EqualsAndHashCode(of = "pid")
+public class PDSBoard {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long pid;
+	private String pname;
+	private String pwriter;
+
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinColumn(name = "pdsno") // PDSFile칼럼에 생성
+	private List<PDSFile> files2; //실제로 컬럼이 생기는게 아님. 여러건을 찾으러 가는 key만 있으면 됨. (pdsno가 PDSfile에 생긴다. )
+}

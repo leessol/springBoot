@@ -1,0 +1,28 @@
+package com.shinhan.controller;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController //@Controller + @ResponseBody
+				//response.getWriter().append("jsp/servlet")
+
+public class SampleController {
+		
+	
+
+	
+	//@RequestMapping(value = "/sample1", method = RequestMethod.GET)
+	@GetMapping("/sample1")
+	public String test1() {
+		return "StringBoot 열공";
+	}
+	
+	@GetMapping("/sample2")
+	public String test2() {
+		return "StringBoot 안녕";
+	}
+}

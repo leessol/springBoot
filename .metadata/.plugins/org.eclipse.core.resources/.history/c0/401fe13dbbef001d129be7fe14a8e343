@@ -1,0 +1,7 @@
+package com.shinhan.education.repository;
+
+import org.springframework.data.repository.CrudRepository;
+
+public interface JobsRepository extends CrudRepository<T, ID> {
+
+}
