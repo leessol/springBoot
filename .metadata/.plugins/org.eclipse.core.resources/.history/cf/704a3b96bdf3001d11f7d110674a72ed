@@ -1,0 +1,17 @@
+package com.shinhan.education.repository;
+
+import org.springframework.data.querydsl.QuerydslPredicateExecutor;
+import org.springframework.data.repository.PagingAndSortingRepository;
+
+import com.shinhan.education.vo3.WebBoard;
+
+public interface WebBoardRepository 
+extends PagingAndSortingRepository<WebBoard, Long>,
+		QuerydslPredicateExecutor<WebBoard>{
+	//인터페이스 안에 들어갈 수 있는 것
+	//1. 상수
+	//2. 추상메서드
+	//3. default 메서드
+	//4. static 메서드
+	
+}

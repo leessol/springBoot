@@ -6,12 +6,18 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="boardNo"/>
+		<item key="selection" value="footer"/>
 		<list key="findhistory">
+			<item value="header"/>
+			<item value="&lt;/p"/>
+			<item value="&lt;p"/>
 			<item value="bno"/>
 			<item value="B"/>
 		</list>
 		<list key="replacehistory">
+			<item value="footer"/>
+			<item value="&lt;/td"/>
+			<item value="&lt;td"/>
 			<item value="boardNo"/>
 			<item value="BoardNo"/>
 		</list>

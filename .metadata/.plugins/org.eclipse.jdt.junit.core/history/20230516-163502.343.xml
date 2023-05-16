@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="WebBoardReplyTest" project="springBootProject" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="com.shinhan.education.WebBoardReplyTest" time="0.18" displayname="WebBoardReplyTest" uniqueid="[engine:junit-jupiter]/[class:com.shinhan.education.WebBoardReplyTest]">
+    <testcase name="test4" classname="com.shinhan.education.WebBoardReplyTest" time="0.18" displayname="test4()" uniqueid="[engine:junit-jupiter]/[class:com.shinhan.education.WebBoardReplyTest]/[method:test4()]"/>
+  </testsuite>
+</testrun>

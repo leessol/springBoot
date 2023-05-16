@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Expression Basic Objects</h1>
+<p th:text="${boardList[0].title}"></p>
+<p>inline 방식 표현: [[${boardList[0].title}]]</p>
+<p>inline 방식 표현: [[${#vars.boardList[0].title}]]</p>
+<p>characterEncodeing: [[${#response.characterEncoding}]]</p>
+<p>environment: [[${@environment.getProperty('app.title')}]]</p>
+<p>session: [[${session.userName}]]</p>
+<p>session: [[${session["userName"]}]]</p>
+<p>param: [[${param.bno}]]</p>
+<p>param: [[${#request.getParameter("bno")}]]</p>
+<p>List객체의 사이즈: [[${boardList.size()}]]</p>
+<p>타입리프가 제공하는 객체 사용 사이즈: [[${#lists.size(boardList)}]]</p>
+
+<hr>
+<p th:text="${now}"></p>
+<p th:text="${#dates.format(now, 'yyyy-MM-dd hh:mm:ss')}"></p>
+<p th:with="today=${#dates.format(now, 'yyyy-MM-dd hh:mm:ss')}">
+	[[${today}]]
+</p>
+<hr>
+<p th:text="${price}">1</p>
+<p th:text="${#numbers.formatInteger(price,3,'COMMA')}">2</p>
+<p th:text="${#numbers.formatDecimal(price,10,10,'POINT')}">정수 10자리, 소수 아래 10자리</p>
+<p th:text="${title}">1</p>
+<p th:utext="${#strings.replace(title,'s','<b>S</b>')}">1</p>
+<p th:utext="${#strings.replace(title,'s','<i>S</i>')}">1</p>
+<p th:text="${#strings.toUpperCase(title)}">1</p>
+<ul>
+	<li th:each="myword:${#strings.listSplit(title,'')}">
+		[[${myword}]]
+	</li>
+</ul>
+<hr>
+<h2 th:text="${options}"></h2>
+<ul>
+	<li th:each="aa:${options} th:text="${aa}">
+	</li>
+</ul>
+</body>
+</html>

@@ -22,7 +22,7 @@ import lombok.ToString;
 
 @Getter
 @Setter
-@ToString
+@ToString //(exclude = "files2") //toString 에서 걸린다. 
 @Entity
 @Table(name = "tbl_pdsboard")
 @EqualsAndHashCode(of = "pid")

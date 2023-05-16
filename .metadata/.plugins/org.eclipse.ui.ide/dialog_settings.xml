@@ -5,8 +5,8 @@
 		<item value="org.eclipse.buildship:3.1.4.v20200326-1743"/>
 		<item value="org.eclipse.egit.gitflow.feature:5.9.0.202009080501-r"/>
 		<item value="org.eclipse.egit:5.9.0.202009080501-r"/>
-		<item value="org.eclipse.emf.common:2.20.0.v20200822-0801"/>
-		<item value="org.eclipse.emf.ecore:2.23.0.v20200630-0516"/>
+		<item value="org.eclipse.emf.common:2.29.0.v20230223-0922"/>
+		<item value="org.eclipse.emf.ecore:2.31.0.v20230226-0921"/>
 		<item value="org.eclipse.epp.mpc:1.8.4.v20200709-0857"/>
 		<item value="org.eclipse.help:2.3.300.v20200902-1800"/>
 		<item value="org.eclipse.jdt:3.18.500.v20200902-1800"/>

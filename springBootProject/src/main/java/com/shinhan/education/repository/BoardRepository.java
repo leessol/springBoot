@@ -17,6 +17,7 @@ import com.shinhan.education.vo.BoardVO;
 public interface BoardRepository extends CrudRepository<BoardVO, Long>, QuerydslPredicateExecutor<BoardVO> {
 
 	// 조건조회 추가하기
+	
 	public List<BoardVO> findByTitle(String title);
 
 	public List<BoardVO> findByContent(String aa);

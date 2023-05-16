@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="ManyToOneTest" project="springBootProject" tests="1" started="1" failures="0" errors="0" ignored="0">
-  <testsuite name="com.shinhan.education.ManyToOneTest" time="0.217" displayname="ManyToOneTest" uniqueid="[engine:junit-jupiter]/[class:com.shinhan.education.ManyToOneTest]">
-    <testcase name="deleteByFile" classname="com.shinhan.education.ManyToOneTest" time="0.217" displayname="deleteByFile()" uniqueid="[engine:junit-jupiter]/[class:com.shinhan.education.ManyToOneTest]/[method:deleteByFile()]"/>
-  </testsuite>
-</testrun>

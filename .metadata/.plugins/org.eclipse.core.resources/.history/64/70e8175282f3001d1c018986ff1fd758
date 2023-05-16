@@ -1,0 +1,13 @@
+package com.shinhan.education.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class FreeBoardController {
+	
+	@GetMapping("/sample1")
+	public void test1() {
+		
+	}
+}

@@ -1,0 +1,13 @@
+package com.shinhan.education;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.shinhan.education.repository.WebBoardRepository;
+
+@SpringBootTest
+public class WebBoardReplyTest {
+	
+	@Autowired
+	WebBoardRepository boardRepo;
+}

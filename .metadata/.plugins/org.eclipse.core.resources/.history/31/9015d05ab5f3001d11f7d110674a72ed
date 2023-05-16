@@ -1,0 +1,11 @@
+package com.shinhan.education;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.shinhan.education.repository.WebBoardRepository;
+
+public class WebBoardReplyTest {
+	
+	@Autowired
+	WebBoardRepository boardRepo;
+}
