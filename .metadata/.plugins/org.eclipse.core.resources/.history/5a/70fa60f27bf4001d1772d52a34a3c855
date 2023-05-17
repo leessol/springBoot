@@ -1,0 +1,21 @@
+/**
+ * 
+ */
+
+var replyManager = (function(){
+var getAll = function(obj, callback){
+console.log("get All.....");
+$.getJSON("/replies/" + obj, callback);
+	};
+
+var add = function(obj, callback){
+	console.log("add.....");
+	$.ajax({
+type:"post",
+url:"/myapp/replies/"+obj.bno,
+data:JSON.stringify(obj),
+dataType:"json",
+contentType:"application/json",
+success:callback
+	});
+};

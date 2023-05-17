@@ -1,0 +1,24 @@
+package com.shinhan.education.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import com.shinhan.education.repository.WebBoardRepository;
+import com.shinhan.education.repository.WebReplyRepository;
+
+@Controller
+public class WebBoardController {
+	
+	@Autowired
+	WebBoardRepository boardRepo;
+	
+	@Autowired
+	WebReplyRepository replyRepo;
+	
+	@GetMapping("/board/list.do")
+	public String selectAll() {
+		
+	}
+	
+}

@@ -24,18 +24,19 @@ public class PageMarker<T> {
 	private int totalPageNum;
 	private List<Pageable> pageList;
 	
-	public PageMarker(Page<T> result) { //몇페이지 
+	public PageMarker(Page<T> result,int pageSize) { //몇페이지 
 		this.result = result;
 		this.currentPage = result.getPageable();
 		this.currentPageNum = currentPage.getPageNumber()+1;
-		this.totalPageNum = result.getTotalPages();
+		this.totalPageNum = result.getTotalPages(); //이 만큼만 만든다. for문에서 여기까지 돌아야 함. 
 		this.pageList = new ArrayList<Pageable>();
-		calcPage();
+		calcPage(pageSize);
 	}
-	public void calcPage() {
-		int tempEndNum = (int)(Math.ceil(currentPageNum/10.0)*10);
-		int startNum = tempEndNum - 9;
+	public void calcPage(int cnt) {
+		int tempEndNum = (int)(Math.ceil(currentPageNum/cnt*1.0)*cnt);
+		int startNum = tempEndNum - (cnt-1);//페이지를 눌렀을 때, 게시글의 시작 넘버와 끝 넘버를 알아야 한다. 
 		Pageable startPage = this.currentPage;
+		
 		for(int i = startNum; i<this.currentPageNum; i++) {
 			startPage = startPage.previousOrFirst();
 		}

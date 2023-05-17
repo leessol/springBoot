@@ -1,0 +1,48 @@
+/*
+* 즉시실행함수로 만듦
+* 키와 메서드를 가진 JavaScript Object를 return함  
+ */
+
+var replyManager = (function() {
+	//특정 board의 댓글 가져오기 ==> replies/100
+	var getAll = function(obj, callback){
+		console.log("get All.....");
+		$.getJSON("/replies/" + obj, callback);
+	};
+	
+	//board의 댓글을 추가 {"bno": 11, "title":"aa", "writer":"bb"}
+	var add = function(obj, callback){
+		console.log("add.....");
+		$.ajax({
+			type: "post",
+			url: "/app/replies/" + obj.bno,
+			data: JSON.stringify(obj),
+			dataType : "json",
+			contentType : "application/json",
+			success: callback
+		});
+	};
+	var update = function(obj, callback) {
+		$.ajax({
+			type: "put", //update
+			url: "/app/replies/" + obj.bno,
+			data: JSON.stringify(obj),
+			dataType: "json",
+			contentType: "application/json",
+			success: callback
+		});
+	};
+
+	var remove = function(obj, callback) {
+		$.ajax({
+			type: "delete",
+			url: "/app/replies/" + obj.bno + " / " + obj.bno, 
+			dataType: "json",
+			contentType: "application/json",
+			success: callback
+	});
+
+};
+return { getAll: getAll, add: add, update: update, remove: remove };
+}) ();
+
