@@ -28,17 +28,25 @@
 					<label>Writer</label> <input class="form-control" name="writer"
 						th:value="${board.writer}" />
 				</div>
-				
-				
-				<input class="form-control" name="regdate"
-					  th:value="${board.regdate}" type="hidden"/> 
-			
-				
+
+
+				<!-- <input class="form-control" name="regdate"
+					  th:value="${board.regdate}" type="hidden"/>  -->
+				<input th:if="${board.regdate!=null}" class="form-control"
+					name="regdate"
+					th:value="${#dates.format(board.regdate,'yyyy-MM-dd hh:mm:ss')}" />
+				<input th:if="${board.regdate==null}" class="form-control"
+					name="regdate"
+					th:value="${#calendars.format(#calendars.createNow(),'yyyy-MM-dd hh:mm:ss')}" />
+
 				<input type="text" name="page" th:value="${pageVO.page}"> <input
 					type="text" name="size" th:value="${pageVO.size}"> <input
 					type="text" name="type" th:value="${pageVO.type}"> <input
 					type="text" name="keyword" th:value="${pageVO.keyword}">
 			</form>
+
+read
+
 
 			<div class="pull_right">
 				<a class="btn btn-warning modbtn">Modify</a> <a
@@ -52,20 +60,17 @@
 	</div>
 	<th:block layout:fragment="script1">
 		<script th:inline="javascript">
-			
-				var formObj = $("#f1");
-				$(".delbtn").click(function() {
-					formObj.attr("action", "delete.do");
-					formObj.attr("method", "post");
-					formObj.submit();
-				});
-				$(".modbtn").click(function() {
-					formObj.attr("action", "modify.do");
-					formObj.attr("method", "post");
-					formObj.submit();
-				});
-
-		
+			var formObj = $("#f1");
+			$(".delbtn").click(function() {
+				formObj.attr("action", "delete.do");
+				formObj.attr("method", "post");
+				formObj.submit();
+			});
+			$(".modbtn").click(function() {
+				formObj.attr("action", "modify.do");
+				formObj.attr("method", "post");
+				formObj.submit();
+			});
 		</script>
 	</th:block>
 </body>

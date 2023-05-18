@@ -1,9 +1,0 @@
-package com.shinhan.education.repository;
-
-import org.springframework.data.repository.CrudRepository;
-
-import com.shinhan.education.vo.JobVO;
-
-public interface JobsRepository extends CrudRepository<JobVO, String> {
-// 오른쪽은 key 값이다. ==> job_id는 string이라서 
-}

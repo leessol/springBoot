@@ -1,3 +1,0 @@
-server.port = 8888
-#default context-path는 /이다. ('' - 이름이 비어있음)
-server.servlet.context-path=/app

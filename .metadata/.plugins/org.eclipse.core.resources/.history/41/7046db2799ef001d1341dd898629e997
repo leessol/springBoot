@@ -1,3 +1,0 @@
-server.port = 8888
-#default
-server.servlet.context-path=/app

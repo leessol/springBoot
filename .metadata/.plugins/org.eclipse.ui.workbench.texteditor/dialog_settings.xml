@@ -6,8 +6,16 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="footer"/>
+		<item key="selection" value="replyTable"/>
 		<list key="findhistory">
+			<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;"/>
+			<item value="replyTable"/>
+			<item value="replyText"/>
+			<item value="replyText.3"/>
+			<item value="read"/>
+			<item value="readonly"/>
+			<item value="printList"/>
+			<item value="name"/>
 			<item value="header"/>
 			<item value="&lt;/p"/>
 			<item value="&lt;p"/>
@@ -24,9 +32,9 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item key="DIALOG_X_ORIGIN" value="1255"/>
-		<item key="DIALOG_Y_ORIGIN" value="437"/>
+		<item key="DIALOG_Y_ORIGIN" value="645"/>
 		<item key="DIALOG_WIDTH" value="393"/>
-		<item key="DIALOG_HEIGHT" value="523"/>
+		<item key="DIALOG_HEIGHT" value="315"/>
 		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
 	</section>
 </section>

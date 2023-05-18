@@ -3,6 +3,18 @@
 * 키와 메서드를 가진 JavaScript Object를 return함
 * restful 방식으로 요청하기   
  */
+ 
+function f1(){
+	alert("함수호출");
+}
+ 
+var externalFunc = (function(){
+	return {myname:"sol",
+			mycompany:"신한",
+			work:function(){alert("외부함수");
+			}};
+})(); // 익명함수를 즉시 실행함수로 만들었다. 
+
 
 var replyManager = (function() {
 	//특정 board의 댓글 가져오기 ==> replies/100
@@ -13,7 +25,7 @@ var replyManager = (function() {
 	
 	//board의 댓글을 추가 {"bno": 11, "title":"aa", "writer":"bb"}
 	var add2 = function(obj, callback){
-		console.log("add.....");
+		//console.log("add.....");
 		$.ajax({
 			type: "post",
 			url: "/app/replies/" + obj.bno,

@@ -12,6 +12,7 @@
 	<groupId>com.shinhan</groupId>
 	<artifactId>springbootProject</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 	<name>springBootProject</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
@@ -73,8 +74,13 @@
 			<groupId>nz.net.ultraq.thymeleaf</groupId>
 			<artifactId>thymeleaf-layout-dialect</artifactId>
 		</dependency>
-
-
+	
+		<!-- 썸네일 관련 업로드  -->
+		<dependency>
+			<groupId>net.coobird</groupId>
+			<artifactId>thumbnailator</artifactId>
+			<version>0.4.6</version>
+		</dependency>
 
 	</dependencies>
 
