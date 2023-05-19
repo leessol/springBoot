@@ -17,6 +17,7 @@ import com.shinhan.education.vo3.PageMarker;
 import com.shinhan.education.vo3.PageVO;
 import com.shinhan.education.vo3.WebBoard;
 
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.java.Log;
 
 @Controller
@@ -27,9 +28,11 @@ public class WebBoardController {
 	@Autowired
 	WebBoardRepository boardRepo;
 	
+	
 	@Autowired
 	WebReplyRepository replyRepo;
 	
+	@ApiOperation(value="게시판 등록화면", notes="게시판 등록화면!!!")
 	@PostMapping("/register.do")
 	public String registerPost(WebBoard board, RedirectAttributes attr) {
 		WebBoard newBoard = boardRepo.save(board);
@@ -42,6 +45,7 @@ public class WebBoardController {
 		return "redirect:list.do";
 		
 	}
+	
 	
 	@GetMapping("/register.do")
 	public void registerGet() {

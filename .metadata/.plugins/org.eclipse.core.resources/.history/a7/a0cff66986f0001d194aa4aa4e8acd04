@@ -1,9 +1,0 @@
-package com.shinhan.education.repository;
-
-import org.springframework.data.repository.CrudRepository;
-
-import com.shinhan.education.vo.ProfileDTO;
-
-public interface ProfileRepository extends CrudRepository<ProfileDTO, Long> {
-	List<ProfileDTO> findByMember(MemberDTO member);
-}
