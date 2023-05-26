@@ -1,8 +1,0 @@
-package com.shinhan.education.repository;
-
-import org.springframework.data.repository.PagingAndSortingRepository;
-
-
-public interface WebReplyRepository extends PagingAndSortingRepository<WebReply, Long> {
-
-}

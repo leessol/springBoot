@@ -1,9 +1,0 @@
-package com.shinhan.education.repository;
-
-import org.springframework.data.repository.PagingAndSortingRepository;
-
-import com.shinhan.education.vo3.WebBoard;
-
-public interface WebBoardRepository extends PagingAndSortingRepository<WebBoard, Long>{
-
-}
